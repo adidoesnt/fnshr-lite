@@ -6,3 +6,9 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+actix-web = "4.9.0"
+dotenv = "0.15.0"
+futures = "0.3.30"
+mongod = "0.3.5"
+serde = "1.0.209"
+serde_json = "1.0.127"
