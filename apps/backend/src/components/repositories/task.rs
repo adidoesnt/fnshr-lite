@@ -1,6 +1,6 @@
+use crate::components::database::{models::Task, mongodb::MongoDB};
 use actix_web::web;
 use mongod::bson::oid::ObjectId;
-use crate::components::{database::MongoDB, models::Task};
 use std::sync::Arc;
 
 pub async fn create_task(db: web::Data<MongoDB>, task: web::Json<Task>) -> ObjectId {

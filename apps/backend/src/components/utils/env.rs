@@ -1,5 +1,5 @@
-use std::env;
 use dotenv::dotenv;
+use std::env;
 
 pub fn get_env_var(name: &str) -> String {
     dotenv().ok();
