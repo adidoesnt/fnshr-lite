@@ -1,15 +1,16 @@
 use mongod::{Client, ClientBuilder};
 
-pub struct Database {
-    _client: Client,
+pub struct MongoDB {
+    pub client: Client,
 }
 
-impl Database {
-    pub fn new(uri: &str) -> Self {
-        let _client: Client = ClientBuilder::new()
+impl MongoDB {
+    pub fn new(uri: &str, db_name: &str) -> Self {
+        let client: Client = ClientBuilder::new()
             .uri(uri)
+            .database(db_name)
             .build()
-            .expect("Failed to create MongoDB _client");
-        Self { _client }
+            .expect("Failed to create MongoDB client");
+        Self { client }
     }
 }
