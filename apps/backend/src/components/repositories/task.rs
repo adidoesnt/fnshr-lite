@@ -17,7 +17,7 @@ pub async fn get_task(db: web::Data<MongoDB>, id: web::Path<ObjectId>) -> Option
     let mut filter = Task::filter();
     let id: ObjectId = id.into_inner();
     let id_clone: ObjectId = id.clone();
-    filter._id = Some(Comparator::Eq(Some(id)));
+    filter._id = Some(Comparator::Eq(id));
     let mut cursor = match Find::<Task>::new()
         .filter(filter)
         .unwrap()

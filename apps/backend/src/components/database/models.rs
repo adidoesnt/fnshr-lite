@@ -1,10 +1,10 @@
-use mongod::{bson::oid::ObjectId, Bson, Mongo};
+use mongod::{Bson, Mongo};
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Bson, Mongo, Serialize, Deserialize)]
 #[mongo(collection = "tasks", field, filter, update)]
+#[mongo(oid)]
 pub struct Task {
-    pub _id: Option<ObjectId>,
     pub title: String,
     pub description: String,
     pub completed: bool,
