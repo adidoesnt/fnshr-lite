@@ -27,6 +27,7 @@ async fn main() -> Result<(), Error> {
             .app_data(web::Data::from(db_ref.clone()))
             .service(routes::health::get_health_status)
             .service(routes::tasks::create_task)
+            .service(routes::tasks::get_task)
     })
     .bind(server_uri)
     .unwrap()
